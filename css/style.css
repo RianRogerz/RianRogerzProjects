@@ -149,6 +149,22 @@ body {
     transition: background-color 0.6s ease;
 }
 
+.navbar {
+    -webkit-animation-name: navbar;
+    -webkit-animation-duration: 1s;
+    animation-name: navbar;
+    animation-duration: 1s;
+}
+
+@-webkit-keyframes navbar {
+    0% {transform: translateY(-100%)} 
+    100% {transform: translateY(0)}
+}
+
+@keyframes navbar {
+    0% {transform: translateY(-100%)} 
+    100% {transform: translateY(0)}
+}
 
 .fade {
     -webkit-animation-name: fade;
@@ -171,6 +187,93 @@ body {
     100% {opacity: 0}
 }
 
+.animationbackground {
+    -webkit-animation-name: fade2;
+    -webkit-animation-duration: 1s;
+    animation-name: fade2;
+    animation-duration: 1s;
+}
+
+@-webkit-keyframes fade2 {
+    0% {opacity: 0} 
+    50% {opacity: 0}
+    100% {opacity: 1}
+}
+
+@keyframes fade2 {
+    0% {opacity: 0} 
+    50% {opacity: 0}
+    100% {opacity: 1}
+}
+
+.captionheading1 {
+    -webkit-animation-name: fade3;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade3;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade3 {
+    0% {opacity: 0} 
+    66% {opacity: 0}
+    100% {opacity: 1}
+}
+
+@keyframes fade3 {
+    0% {opacity: 0} 
+    66% {opacity: 0}
+    100% {opacity: 1}
+}
+
+.captionheading3 {
+    -webkit-animation-name: fade4;
+    -webkit-animation-duration: 2s;
+    animation-name: fade4;
+    animation-duration: 2s;
+}
+
+@-webkit-keyframes fade4 {
+    0% {opacity: 0} 
+    75% {opacity: 0}
+    100% {opacity: 1}
+}
+
+@keyframes fade4 {
+    0% {opacity: 0} 
+    75% {opacity: 0}
+    100% {opacity: 1}
+}
+
+.captionbuttoncontactme {
+    -webkit-animation-name: fade5;
+    -webkit-animation-duration: 2.5s;
+    animation-name: fade5;
+    animation-duration: 2.5s;
+}
+
+@-webkit-keyframes fade5 {
+    0% {opacity: 0} 
+    80% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fade5 {
+    0% {opacity: 0} 
+    80% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
 
 .landingpage {
     top: 0;
@@ -180,11 +283,13 @@ body {
     overflow: hidden;
     position: relative;
     width: 100%;
+    min-height: 560px;
     height: 100vh;
 }
 
 .landingpage .landingbackground {
     width: 100%;
+    min-height: 560px;
     height: 100vh;
     background-position: center center;
     -webkit-transform: translateZ(0);
@@ -222,12 +327,12 @@ body {
 
 .caption {
     text-align: center;
+    top: 100px;
     margin-left: auto;
     margin-right: auto;
     display: block;
     position: absolute;
     width: 100%;
-    top: 23%;
     z-index: 1;
     color: white;
     text-transform: uppercase;
@@ -284,9 +389,6 @@ body {
     font-size: 1.4rem;
     font-weight: 700;
 }
-
-
-
 
 /*--- Profile --*/
 
@@ -581,10 +683,10 @@ form input[type=submit]:hover {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    top: 130px;
     display: block;
     position: absolute;
     width: 100%;
-    top:30%;
     z-index: 1;
     color: white;
     text-transform: uppercase;
