@@ -1,4 +1,8 @@
-    $('#btnRun1').click(function() {
+$(function() {
+    $('#weatherResults, #wikiResults, #postcodeResults').hide();
+});
+
+$('#btnRun1').click(function() {
 
 		$.ajax({
 			url: "php/getWeatherInfo.php",
@@ -19,7 +23,9 @@
 					$('#txtTemperature').html(result['data']['temperature']);
 					$('#txtHumidity').html(result['data']['humidity']);
 					$('#txtWindspeed').html(result['data']['windSpeed']);
-                    
+                    $('#weatherResults').show();
+                    $('#wikiResults').hide();
+                    $('#postcodeResults').hide();
 				}
 			
 			},
@@ -44,15 +50,17 @@
 				console.log(JSON.stringify(result));
 
 				if (result.status.name == "ok") {
-					$('#txtCountry').html(result['data'][0]['countryCode']);
 					$('#txtCity').html(result['data'][0]['title']);
-					$('#txtLanguage').html(result['data'][0]['lang']);
-					$('#txtLongitude').html(result['data'][0]['lng']);
-					$('#txtLatitude').html(result['data'][0]['lat']);
 					$('#txtSummary').html(result['data'][0]['summary']);
                     $('#txtURL').html("Link to "+result['data'][0]['title']+" Wiki page");
                     $("#txtURL").attr("href","https://"+result['data'][0]['wikipediaUrl']);
                     $("#wikiImage").attr("src",result['data'][0]['thumbnailImg']);
+                    $('#txtLatitude').html(result['data'][0]['lat'].toFixed(4));
+					$('#txtLongitude').html(result['data'][0]['lng'].toFixed(4));
+                    $("#wikiMapCoordinates").attr("src","https://maps.google.com/maps?q="+result['data'][0]['lat'].toFixed(4)+", "+result['data'][0]['lng'].toFixed(4)+"&z=15&output=embed");
+                    $('#weatherResults').hide();
+                    $('#wikiResults').show();
+                    $('#postcodeResults').hide();
 				}
 			
 			},
@@ -82,8 +90,12 @@
 					$('#txtDistrict').html(result['data'][0]['adminName3']);
 					$('#txtPostcode').html(result['data'][0]['postalcode']);
 					$('#txtPlacename').html(result['data'][0]['placeName']);
-					$('#txtPostcodeLongitude').html(result['data'][0]['lng']);
-					$('#txtPostcodeLatitude').html(result['data'][0]['lat']);
+                    $('#txtPostcodeLatitude').html(result['data'][0]['lat'].toFixed(5));
+					$('#txtPostcodeLongitude').html(result['data'][0]['lng'].toFixed(5));
+                    $("#mapCoordinates").attr("src","https://maps.google.com/maps?q="+result['data'][0]['lat'].toFixed(5)+", "+result['data'][0]['lng'].toFixed(5)+"&z=15&output=embed");
+                    $('#weatherResults').hide();
+                    $('#wikiResults').hide();
+                    $('#postcodeResults').show();
 				}
 			
 			},

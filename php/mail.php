@@ -15,6 +15,6 @@ if($email!=NULL){
     mail($to,$subject,$txt,$headers);
 }
 
-header("Location:index.html#contact");
+header("Location:../index.html#contact");
 
 ?>
