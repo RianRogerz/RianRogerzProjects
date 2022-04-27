@@ -30,12 +30,209 @@ td {
     font-size: 50px;
 }
 
-#weatherTable, #countryInfoTable, #WIKITable, #CurrencyTable {
+#CountryInfoModalHeader {
+    background-color: red;
+}
+
+#CountryInfoModalTitle {
+    color: white;
+}
+
+#countryInfoClose {
+    opacity: 1;
+    color: white;
+    font-size: 2rem;
+}
+
+#countryBtn {
+    background-color: red;
+    font-weight: 700;
+}
+
+#CountryMoreInfoModalHeader {
+    background-color: purple;
+}
+
+#CountryMoreInfoModalTitle {
+    color: white;
+}
+
+#countryMoreInfoClose {
+    opacity: 1;
+    color: white;
+    font-size: 2rem;
+}
+
+#country2Btn {
+    background-color: purple;
+    font-weight: 700;
+}
+
+#WIKIModalHeader {
+    background-color: black;
+}
+
+#WIKIModalTitle {
+    color: white;
+}
+
+#WIKIClose {
+    opacity: 1;
+    color: white;
+    font-size: 2rem;
+}
+
+#WIKIBtn {
+    background-color: black;
+    font-weight: 700;
+}
+
+#WeatherModalHeader {
+    background-color: blue;
+}
+
+#WeatherModalTitle {
+    color: white;
+}
+
+#weatherBtn {
+    background-color: blue;
+    font-weight: 700;
+}
+
+#weatherClose {
+    opacity: 1;
+    color: white;
+    font-size: 2rem;
+}
+
+#weather-modal-content {
+  background-size: cover;
+  background-image: url("../img/weatherModalImg.jpg");
+}
+
+#weatherTable2, #countryInfoTable {
     margin-left: auto;
     margin-right: auto;
 }
 
+#WIKITable {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border-color: black;
+    border-style: solid;
+    border-width: medium;
+}
+
+#WIKITable td {
+    padding: 10px;
+    color: black;
+    font-weight: 700;
+    border-color: black;
+    border-style: none;
+}
+
+#weatherTable {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border-color: black;
+    border-style: solid;
+    border-width: medium;
+}
+
+#weatherTable2 {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+}
+
+#weatherTable td {
+    padding: 10px;
+    color: black;
+    font-weight: 700;
+    border-color: black;
+    border-style: none;
+}
+
+#weatherTable2 td {
+    padding: 10px;
+    color: black;
+    font-weight: 700;
+    border-color: black;
+    border-style: solid;
+    border-width: medium;
+}
+
+#selCurrency {
+    font-weight: 700;
+}
+
+#CurrencyTable {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border-color: black;
+    border-style: solid;
+    border-width: medium;
+}
+
+#CurrencyTable2 {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+}
+
+#CurrencyTable td {
+    padding: 10px;
+    color: black;
+    font-weight: 700;
+    border-color: black;
+    border-style: solid;
+    border-width: medium;
+}
+
+#CurrencyTable2 td {
+    padding: 10px;
+    color: black;
+    font-weight: 700;
+    border-color: black;
+    border-style: solid;
+    border-width: medium;
+}
+
+#WIKI-modal-content {
+  background-size: cover;
+  background-image: url("../img/WIKIImg.jpg");
+}
+
+#currency-modal-content {
+  background-size: cover;
+  background-image: url("../img/currencyModalImg.jpg");
+}
+
+#CurrencyModalHeader {
+    background-color: darkgreen;
+}
+
+#currency-modal-title{
+    color:white;
+}
+
+#currencyBtn {
+    background-color: darkgreen;
+    font-weight: 700;
+}
+
+#currencyClose {
+    opacity: 1;
+    color: white;
+    font-size: 2rem;
+}
+
 .currencyOption {
+    font-weight: bold;
     text-align: center;
 }
  
@@ -142,82 +339,4 @@ td {
     right: 0; 
     bottom: 0; 
     left: 0; 
-    /*
-   height: 100vh;
 }
-
-
-.offset:before {
-    display: block;
-    content: "";
-    height: 4rem;
-    margin-top: -4rem;
-}
-*/
-
-/*
-#preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 9999;
-    overflow: hidden;
-    background: #fff;
-}
-
-#preloader:before {
-    content: "";
-    position: fixed;
-    top: calc(50% - 30px);
-    left: calc(50% - 30px);
-    border: 6px solid #f2f2f2;
-    border-top: 6px solid #56829e ;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    -webkit-animation: animate-preloader 1s linear infinite;
-    animation: animate-preloader 1s linear infinite;
-}
-
-@-webkit-keyframes animate-preloader {
-0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-}
-100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-}
-}
-
-@keyframes animate-preloader {
-0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-}
-100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-}
-}
-*/
-/*============ BOOTSTRAP BREAK POINTS:
-
-Extra small (xs) devices (portrait phones, less than 576px)
-No media query since this is the default in Bootstrap
-
-Small (sm) devices (landscape phones, 576px and up)
-@media (min-width: 576px) { ... }
-
-Medium (md) devices (tablets, 768px and up)
-@media (min-width: 768px) { ... }
-
-Large (lg) devices (desktops, 992px and up)
-@media (min-width: 992px) { ... }
-
-Extra (xl) large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) { ... }
-
-=============*/

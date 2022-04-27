@@ -63,9 +63,9 @@
         <div id="countryModal" class="modal fade" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Country Information</h5>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <div class="modal-header" id="CountryInfoModalHeader">
+                    <h5 class="modal-title" id ="CountryInfoModalTitle">Country Information</h5>
+                    <button type="button" class="close" data-dismiss="modal" id="countryInfoClose"><ion-icon name="close-circle"></ion-icon></button>
                 </div>
                 <div class="modal-body">
                 
@@ -115,9 +115,9 @@
     <div id="countryModal2" class="modal fade" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">More Country Info</h5>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <div class="modal-header" id="CountryMoreInfoModalHeader">
+                    <h5 class="modal-title" id="CountryMoreInfoModalTitle">More Country Info</h5>
+                    <button type="button" class="close" data-dismiss="modal" id="countryMoreInfoClose"><ion-icon name="close-circle"></ion-icon></button>
                 </div>
                 <div class="modal-body">
                 
@@ -166,40 +166,28 @@
         
         <div id="WIKIModal" class="modal fade" tabindex="-1">
         <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">WIKI Info</h5>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="modal-content" id="WIKI-modal-content">
+                <div class="modal-header" id="WIKIModalHeader">
+                    <h5 class="modal-title" id="WIKIModalTitle">WIKI Info</h5>
+                    <button type="button" class="close" data-dismiss="modal" id="WIKIClose"><ion-icon name="close-circle"></ion-icon></button>
                 </div>
                 <div class="modal-body">
                             
                 <table id="WIKITable">
                 <tr>
-					<td>
-						Wiki title: 
-					</td>
 					<td id="txtTitle">
 					</td>
 				</tr>
                	<tr>
-					<td>
-						Wiki Summary: 
-					</td>
 					<td id="txtSummary">	
 					</td>
 				</tr>       
                 <tr>
 					<td>
-						Wiki: 
-					</td>
-					<td>
 				    <a href="" target="_blank" id="txtURL"></a>
 					</td>
 				</tr>
                 <tr>
-					<td>
-						Country Wiki: 
-					</td>
 					<td>
 				    <a href="" target="_blank" id="txtCountryURL"></a>
 					</td>
@@ -216,27 +204,22 @@
         
         <div id="weatherModal" class="modal fade" tabindex="-1">
         <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Country Weather Now</h5>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="modal-content" id="weather-modal-content">
+                <div class="modal-header" id="WeatherModalHeader">
+                    <h5 class="modal-title" id="WeatherModalTitle">Country Weather Now</h5>
+                    <button type="button" class="close" id="weatherClose" data-dismiss="modal"><ion-icon name="close-circle"></ion-icon></button>
                 </div>
                 <div class="modal-body">
                                 
                 <table id="weatherTable">
-				<tr>
-					<td> 
-                    <div id="countryWeatherMain"></div>
+                    <tr>
+                    <td colspan="2"> 
                     <div id="countryWeatherDesc"></div>
 					</td>
-				    <td>
-                    <img src="" id="countryWeatherIcon">
-
-					</td>
                     </tr>
-                    <tr>
-					<td>
-						Temp: 
+				    <tr>
+                    <td>
+                    <img src="" id="countryWeatherIcon">
 					</td>
 					<td>
                     <div id="countryCelcius"></div>
@@ -244,22 +227,26 @@
                     <div id="countryKelvin"></div>
                     </td>
                     </tr>
+                </table>
+                    <br>
+                <table id="weatherTable2">
                     <tr>
 					<td>
-						Windspeed: 
+						Windspeed 
 					</td>
+					<td>
+						Humidity 
+					</td>
+                    </tr>
+                    <tr>
 					<td>
                     <div id="countryWindspeed"></div>
                     <div id="countryWindspeedMPH"></div>
 					</td>
-                    </tr>
-                    <tr>
-					<td>
-						Humidity: 
-					</td>
 					<td id="countryHumidity">
 					</td>
                     </tr>
+                    
                 </table>
     
                 </div>
@@ -272,10 +259,10 @@
         
         <div id="currencyModal" class="modal fade" tabindex="-1">
         <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Currency Info</h5>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="modal-content" id="currency-modal-content">
+                <div class="modal-header" id="CurrencyModalHeader">
+                    <h5 class="modal-title" id="currency-modal-title">Currency Info</h5>
+                    <button type="button" class="close" id="currencyClose" data-dismiss="modal"><ion-icon name="close-circle"></ion-icon></button>
                 </div>
                 <div class="modal-body">
                             
@@ -289,18 +276,21 @@
                     </tr>
                     <tr>
 					<td>
-						Name: 
+						Name 
 					</td>
-					<td id="currencyName">
+                    <td>
+						Sub Unit
 					</td>
                     </tr>
                     <tr>
-					<td>
-						Sub Unit: 
+                    <td id="currencyName">
 					</td>
 					<td id="currencySubunit">
 					</td>
                     </tr>
+                </table>
+                    <br>
+                <table id="CurrencyTable2">
                     <tr>
 					<td id="currencyNameRates" colspan="2">
                     </td>

@@ -220,9 +220,9 @@ function getWIKIInfo(thePostcode, theCountryISO) {
                  
                     $('#WIKIModal #txtTitle').html(result['data'][0]['title']);
 					$('#WIKIModal #txtSummary').html(result['data'][0]['summary']);
-                    $('#WIKIModal #txtURL').html("Link to "+result['data'][0]['title']+" Wiki page");
+                    $('#WIKIModal #txtURL').html("Visit "+result['data'][0]['title']+" Wiki page");
                     $("#WIKIModal #txtURL").attr("href","https://"+result['data'][0]['wikipediaUrl']);
-                    $('#WIKIModal #txtCountryURL').html("Link to "+country+" Wiki page");
+                    $('#WIKIModal #txtCountryURL').html("Visit "+country+" Wiki page");
                     $("#WIKIModal #txtCountryURL").attr("href","https://en.wikipedia.org/wiki/"+country.split(' ').join('_'));
 
             },
@@ -232,11 +232,11 @@ function getWIKIInfo(thePostcode, theCountryISO) {
 		});
 };
      
-   L.easyButton('<ion-icon style="font-size:30px;margin-left:-6px;margin-top:-1px;" name="information-circle"></ion-icon>', function(btn, map){
+   L.easyButton('<ion-icon style="font-size:30px;margin-left:-6px;margin-top:-1px;color:red;" name="information-circle"></ion-icon>', function(btn, map){
     $("#countryModal").modal('show'); 
    }).addTo(map);
     
-   L.easyButton('<ion-icon style="font-size:30px;margin-left:-6px;margin-top:-1px;" name="help-circle"></ion-icon>', function(btn, map){
+   L.easyButton('<ion-icon style="font-size:30px;margin-left:-6px;margin-top:-1px;color:purple" name="help-circle"></ion-icon>', function(btn, map){
     $("#countryModal2").modal('show');      
 
     $('#countryModal2 #countryModalTitle').text(country);
@@ -247,7 +247,7 @@ function getWIKIInfo(thePostcode, theCountryISO) {
        
    }).addTo(map);
     
-   L.easyButton('<ion-icon style="font-size:30px;margin-left:-6px;margin-top:-1px;" name="globe"></ion-icon>', function(btn, map){
+   L.easyButton('<ion-icon style="font-size:30px;margin-left:-6px;margin-top:-1px;color:black;" name="globe"></ion-icon>', function(btn, map){
      $("#WIKIModal").modal('show');  
        
 }).addTo(map);
@@ -266,7 +266,7 @@ function getWIKIInfo(thePostcode, theCountryISO) {
     
    let countryHumidity;
         
-   L.easyButton('<ion-icon style="font-size:30px;margin-left:-6px;margin-top:-1px;" name="cloud-circle"></ion-icon>', function(btn, map){
+   L.easyButton('<ion-icon style="font-size:30px;margin-left:-6px;margin-top:-1px;color:blue;" name="cloud-circle"></ion-icon>', function(btn, map){
      $("#weatherModal").modal('show');      
     $.ajax({
 			url: "php/getWeatherData.php",
@@ -296,7 +296,7 @@ function getWIKIInfo(thePostcode, theCountryISO) {
                 countryHumidity = result['data']['main']['humidity'];
 
                 $('#weatherModal #countryWeatherIcon').attr("src","http://openweathermap.org/img/w/" + countryWeatherIcon + ".png");
-                $('#weatherModal #countryWeatherIcon').css("width", "120px");
+                $('#weatherModal #countryWeatherIcon').css("width", "110px");
                 
                 $('#weatherModal #countryWeatherMain').text(countryWeatherMain.toUpperCase());
                 $('#weatherModal #countryWeatherDesc').text(countryWeatherDesc.toUpperCase());
@@ -319,9 +319,10 @@ function getWIKIInfo(thePostcode, theCountryISO) {
        
         }).addTo(map);
         
-        L.easyButton('<ion-icon style="font-size:30px;margin-left:-6px;margin-top:-1px;" name="logo-usd"></ion-icon>', function(btn, map){
+        L.easyButton('<ion-icon style="font-size:30px;margin-left:-6px;margin-top:-1px;color:darkgreen;" name="logo-usd"></ion-icon>', function(btn, map){
             $("#currencyModal").modal('show'); 
             $('#currencyModal #currencyExchangeRow').hide();
+            $('#currencyModal #currencyRates:nth-child(2)').hide();
             $.ajax({
                 url: "php/getCurrencyData.php",
                 type: 'GET',
@@ -345,6 +346,8 @@ function getWIKIInfo(thePostcode, theCountryISO) {
                 $('#currencyModal #currencyRates').text(result['data']['rates'][selectCurrency]);
                 $('#currencyModal #currencyExchange').text("1.00 "+currencyISO+" = "+(1 * result['data']['rates'][selectCurrency]).toFixed(2)+" "+$('#selCurrency').val());
                 $('#currencyModal #currencyExchangeRow').show();
+                $('#currencyModal #currencyRates:nth-child(2)').show();
+                    
                 });
                                
                 },
@@ -355,19 +358,19 @@ function getWIKIInfo(thePostcode, theCountryISO) {
        
             }).addTo(map);
     
-    L.easyButton('<ion-icon style="font-size:30px;margin-left:-6px;margin-top:-1px;" name="pin"></ion-icon>', function(btn, map){
+    L.easyButton('<ion-icon style="font-size:30px;margin-left:-6px;margin-top:-1px;color:orange;" name="pin"></ion-icon>', function(btn, map){
     
     map.setView([crd.latitude, crd.longitude], 15);
 
     }).addTo(map);
     
-    L.easyButton('<ion-icon style="font-size:30px;margin-left:-6px;margin-top:-1px;" name="earth"></ion-icon>', function(btn, map){
+    L.easyButton('<ion-icon style="font-size:30px;margin-left:-6px;margin-top:-1px;color:brown;" name="earth"></ion-icon>', function(btn, map){
     
     map.setView([crd.latitude, crd.longitude], 2);
 
     }).addTo(map);
     
-    L.easyButton('<ion-icon style="font-size:30px;margin-left:-6px;margin-top:-1px;" name="locate"></ion-icon>', function(btn, map){
+    L.easyButton('<ion-icon style="font-size:30px;margin-left:-6px;margin-top:-1px;color:grey;" name="locate"></ion-icon>', function(btn, map){
     
     map.setView([crd.latitude, crd.longitude], 5);
 
